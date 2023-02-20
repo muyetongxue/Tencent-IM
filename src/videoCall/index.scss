@@ -1,0 +1,152 @@
+.index {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background: url("/videoCall/static/bg.png") no-repeat 0 0 / cover;
+	.player-container {
+		&:nth-child(1) {
+			width: 100vw;
+			height: 65vh;
+		}
+	}
+	.pusher-container {
+		position: absolute;
+		width: vw(240);
+		height: vw(320);
+		right: vw(20);
+		top: vw(20);
+		z-index: 2;
+		.loading {
+			position: absolute;
+			top: 40vh;
+			left: 50%;
+			transform: translate(-50%, 0);
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			.loading-img {
+				width: vw(128);
+				height: vw(128);
+				animation: rotate 2s linear infinite;
+			}
+			.loading-text {
+				margin: vw(28) 0 0 0;
+				font-size: vw(28);
+				color: #FFFFFF;
+			}
+		}
+		&.fullscreen {
+			width: 100vw;
+			height: 65vh;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	.bottom-btns {
+		position: absolute;
+		z-index: 3;
+		bottom: vw(284);
+		width: 100vw;
+		padding: 0 vw(40);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.btn-item {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: flex-end;
+			align-items: center;
+			width: vw(180);
+			.camera-switch {
+				width: vw(120);
+				height: vw(120);
+				background-repeat: no-repeat;
+				background-position: center 0;
+				background-size: 100% 100%;
+				&.open {
+					background-image: url("/videoCall/static/camera-open.png");
+				}
+				&.close {
+					background-image: url("/videoCall/static/camera-close.png");
+				}
+			}
+			.microphone-switch {
+				width: vw(120);
+				height: vw(120);
+				background-repeat: no-repeat;
+				background-position: center 0;
+				background-size: 100% 100%;
+				&.open {
+					background-image: url("/videoCall/static/microphone-open.png");
+				}
+				&.close {
+					background-image: url("/videoCall/static/microphone-close.png");
+				}
+			}
+			.camera-flip {
+				width: vw(120);
+				height: vw(120);
+				background: url("/videoCall/static/camera-flip.png") no-repeat center 0 / 100% 100%;
+			}
+			.soundmode-change {
+				width: vw(120);
+				height: vw(120);
+				background-repeat: no-repeat;
+				background-position: center 0;
+				background-size: 100% 100%;
+				&.open {
+					background-image: url("/videoCall/static/speaker-open.png");
+				}
+				&.close {
+					background-image: url("/videoCall/static/speaker-close.png");
+				}
+			}
+			.prescription {
+				width: vw(120);
+				height: vw(120);
+				background: url("/videoCall/static/chufang.png") no-repeat center 0 / 100% 100%;
+			}
+			.desc-txt {
+				margin: vw(24) 0 0 0;
+				font-size: vw(28);
+				color: #FFFFFF;
+			}
+		}
+	}
+	.hang-up {
+		position: absolute;
+		z-index: 3;
+		left: 50%;
+		bottom: vw(108);
+		transform: translate(-50%, 0);
+		width: vw(120);
+		height: vw(120);
+		background: url("/videoCall/static/hang-up.png") no-repeat center 0 / 100% 100%;
+	}
+}
+
+.pusher {
+	height: 100%;
+}
+
+.player {
+	height: 100%;
+	width: 100%;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	
+	50% {
+		transform: rotate(180deg);
+	}
+	
+	100% {
+		transform: rotate(360deg);
+	}
+}

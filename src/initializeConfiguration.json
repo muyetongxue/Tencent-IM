@@ -1,0 +1,8 @@
+{
+  "NAME": "云卡测试",
+  "APPID": {
+    "MP-WEIXIN": "wx245ec86e73ca3c33"
+  },
+  "BASEURL": "https://ihis.houaijk.com/patient",
+  "BASECOLOR": "#0E75FC"
+}

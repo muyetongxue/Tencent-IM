@@ -1,0 +1,86 @@
+@use "sass:math";
+
+$base-color: #0E75FC;
+$font-size-base: 7.5;
+
+@function vw($n) {
+	@return math.div($n, $font-size-base) + vw;
+}
+
+:root {
+	--default-color: #0E75FC;
+	--pale-color: #FFFFFF;
+	--success-color: #07c160;
+	--danger-color: #ee0a24;
+	--warning-color: #ff976a;
+}
+
+page, view {
+	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
+}
+
+page {
+	font-size: vw(24);
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+	Helvetica, Segoe UI, Arial, Roboto, "PingFang SC", "miui",
+	"Hiragino Sans GB", "Microsoft Yahei", sans-serif !important;
+	//移动端字体优化
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+//button
+button, button[type="default"] {
+	margin: 0;
+	color: rgba(255, 255, 255, 1);
+	background-color: var(--default-color);
+}
+
+.button-hover, .button-hover[type="default"] {
+	opacity: .7;
+	color: rgba(255, 255, 255, 1);
+	background-color: var(--default-color);
+	
+}
+
+button[type="pale"] {
+	margin: 0;
+	color: rgba(0, 0, 0, 1);
+	background-color: var(--pale-color);
+}
+
+.button-hover[type="pale"] {
+	opacity: .7;
+	color: rgba(0, 0, 0, 1);
+	background-color: var(--pale-color);
+}
+
+button[type="warning"] {
+	margin: 0;
+	color: rgba(255, 255, 255, 1);
+	background-color: var(--warning-color);
+}
+
+.button-hover[type="warning"] {
+	opacity: .7;
+	color: rgba(255, 255, 255, 1);
+	background-color: var(--warning-color);
+}
+
+//placeholder样式
+.placeholder-class {
+	color: #999999;
+}
+
+//容器外边框
+.bs-border {
+	box-shadow: 0 0 vw(12) rgba(61, 156, 253, 0.26);
+	border-radius: vw(20);
+}
+
+//ios惯性滚动
+.bs-scroll {
+	-webkit-overflow-scrolling: touch;
+}

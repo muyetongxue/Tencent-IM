@@ -1,0 +1,74 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "云卡测试"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationStyle": "default",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "backgroundColor": "#FFFFFF",
+    "onReachBottomDistance": 100,
+    "mp-alipay": {},
+    "app-plus": {},
+    "mp-weixin": {},
+    "usingComponents": {}
+  },
+  "subPackages": [
+    {
+      "root": "conversation",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "enablePullDownRefresh": true,
+            "navigationBarBackgroundColor": "#0DB496",
+            "navigationBarTextStyle": "white",
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "videoCall",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarBackgroundColor": "#000000",
+            "navigationBarTextStyle": "white",
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": []
+    }
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^w-(.*)": "@/uni_modules/wmf-code/components/w-$1/w-$1.vue",
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+    }
+  },
+  "condition": {
+    "current": 0,
+    "list": [
+      {
+        "name": "",
+        "path": "",
+        "query": ""
+      }
+    ]
+  }
+}

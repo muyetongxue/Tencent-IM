@@ -1,0 +1,276 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3354616 */
+  src: url('iconfont.woff2') format('woff2');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fayuyin:before {
+  content: "\e70e";
+}
+
+.icon-fatupian:before {
+  content: "\e70f";
+}
+
+.icon-left:before {
+  content: "\e708";
+}
+
+.icon-kangyuanjiance:before {
+  content: "\e704";
+}
+
+.icon-yiyuanjianjie:before {
+  content: "\e702";
+}
+
+.icon-zhinengdaozhen:before {
+  content: "\e703";
+}
+
+.icon-jiebang:before {
+  content: "\e701";
+}
+
+.icon-fabushijian:before {
+  content: "\e6fe";
+}
+
+.icon-gengduo:before {
+  content: "\e6ff";
+}
+
+.icon-yueduliang:before {
+  content: "\e700";
+}
+
+.icon-jianyanbaogao1:before {
+  content: "\e6d5";
+}
+
+.icon-jianchabaogao1:before {
+  content: "\e6d6";
+}
+
+.icon-yaojiagongshi:before {
+  content: "\e6d1";
+}
+
+.icon-jiuyizhinan:before {
+  content: "\e6d2";
+}
+
+.icon-laiyuandaohang:before {
+  content: "\e6d3";
+}
+
+.icon-dianziyibao:before {
+  content: "\e6d4";
+}
+
+.icon-zhongzhi:before {
+  content: "\e6cf";
+}
+
+.icon-shijianshaixuan:before {
+  content: "\e6d0";
+}
+
+.icon-manyidutiaocha:before {
+  content: "\e6cd";
+}
+
+.icon-binglifuyin:before {
+  content: "\e6ce";
+}
+
+.icon-chushengzhengmingzhuce:before {
+  content: "\e6c8";
+}
+
+.icon-huzhaojunguanzheng:before {
+  content: "\e6c9";
+}
+
+.icon-yijianshouquan:before {
+  content: "\e6ca";
+}
+
+.icon-saomabangding:before {
+  content: "\e6cb";
+}
+
+.icon-shenfenxinxizhuce:before {
+  content: "\e6cc";
+}
+
+.icon-liuhangbingtiaoyanbiao:before {
+  content: "\e6c7";
+}
+
+.icon-buchongxinxi:before {
+  content: "\e6c6";
+}
+
+.icon-hege:before {
+  content: "\e6c4";
+}
+
+.icon-buhege:before {
+  content: "\e6c5";
+}
+
+.icon-dizhi:before {
+  content: "\e6c2";
+}
+
+.icon-dianhua:before {
+  content: "\e6c3";
+}
+
+.icon-jiankangma:before {
+  content: "\e6bf";
+}
+
+.icon-bianji:before {
+  content: "\e6c0";
+}
+
+.icon-jiuzhenka:before {
+  content: "\e6c1";
+}
+
+.icon-hesuanjiancemain:before {
+  content: "\e6be";
+}
+
+.icon-zhuyuanfuwumain:before {
+  content: "\e6bb";
+}
+
+.icon-menzhenjiaofeimain:before {
+  content: "\e6bc";
+}
+
+.icon-yuyueguahaomain:before {
+  content: "\e6bd";
+}
+
+.icon-a-qiehuan4:before {
+  content: "\e6ba";
+}
+
+.icon-a-right2:before {
+  content: "\e6b9";
+}
+
+.icon-jianka:before {
+  content: "\e6b8";
+}
+
+.icon-HomeSelected:before {
+  content: "\e69f";
+}
+
+.icon-InformationSelected:before {
+  content: "\e6a0";
+}
+
+.icon-HeathEQRSelected:before {
+  content: "\e6a1";
+}
+
+.icon-PersonalCenter:before {
+  content: "\e6a2";
+}
+
+.icon-Home:before {
+  content: "\e6a3";
+}
+
+.icon-HeathEQR:before {
+  content: "\e6a4";
+}
+
+.icon-dingcanfuwu:before {
+  content: "\e6a5";
+}
+
+.icon-guahaofuwu:before {
+  content: "\e6a6";
+}
+
+.icon-PersonalCenterSelected:before {
+  content: "\e6a7";
+}
+
+.icon-jianyanbaogao:before {
+  content: "\e6a8";
+}
+
+.icon-Information:before {
+  content: "\e6a9";
+}
+
+.icon-hesuanjieguo:before {
+  content: "\e6aa";
+}
+
+.icon-jianchabaogao:before {
+  content: "\e6ab";
+}
+
+.icon-yuanneidaohang:before {
+  content: "\e6ac";
+}
+
+.icon-jiaofeijilu-1:before {
+  content: "\e6ad";
+}
+
+.icon-guahaofuwu-1:before {
+  content: "\e6ae";
+}
+
+.icon-yajinchongzhi:before {
+  content: "\e6af";
+}
+
+.icon-menzhendaijiaofei:before {
+  content: "\e6b0";
+}
+
+.icon-zhinengtingche:before {
+  content: "\e6b1";
+}
+
+.icon-jiaofeijilu:before {
+  content: "\e6b2";
+}
+
+.icon-hesuanjiance:before {
+  content: "\e6b3";
+}
+
+.icon-paizuihouzhen:before {
+  content: "\e6b4";
+}
+
+.icon-riqingdanchaxun:before {
+  content: "\e6b5";
+}
+
+.icon-zhuyuanxinxibulu:before {
+  content: "\e6b6";
+}
+
+.icon-jujiahuli:before {
+  content: "\e6b7";
+}
