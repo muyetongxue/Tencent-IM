@@ -49,30 +49,13 @@
   "h5": {
     "devServer": {
       "https": false,
+      "disableHostCheck": false,
+      "hmr": true,
+      "port": 8080,
       "proxy": {
-        "/pay": {
-          "target": "https://dzjkk.jkxtapp.com",
-          "changeOrigin": true,
-          "secure": false,
-          "pathRewrite": {
-            "^/pay": ""
-          }
-        },
-        "/admin": {
-          "target": "https://dzjkk.jkxtapp.com",
-          "changeOrigin": true,
-          "secure": false,
-          "pathRewrite": {
-            "^/admin": ""
-          }
-        },
-        "/wechat": {
-          "target": "https://dzjkk.jkxtapp.com",
-          "changeOrigin": true,
-          "secure": false,
-          "pathRewrite": {
-            "^/wechat": ""
-          }
+        "/patient": {
+          "target": "https://ihis.houaijk.com",
+          "changeOrigin": true
         }
       },
       "optimization": {

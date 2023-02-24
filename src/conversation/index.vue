@@ -70,7 +70,7 @@ const scrollToBottom = () => {
 //开始语音录制
 const soundRecording = () => audioStart_TIM()
 //结束语音录制
-const stopRecording = () => sendAudioMessage_TIM(`0104010`)
+const stopRecording = () => sendAudioMessage_TIM(`fusheng`)
 
 //语音文字切换 播放
 const audioToggle = ref(false)
@@ -110,10 +110,10 @@ const txt = ref('')
 const confirm = (type) => {
 	if (type === 'text') {
 		if (!txt.value) return
-		sendMessage_TIM(`0104010`,'text',txt.value)
+		sendMessage_TIM(`fusheng`,'text',txt.value)
 		txt.value = ''
 	} else if (type === 'image') {
-		sendMessage_TIM(`0104010`,'image')
+		sendMessage_TIM(`fusheng`,'image')
 	}
 	scrollToBottom()
 }
@@ -129,7 +129,7 @@ const toPreviewImage = (src) => {
 }
 
 //订阅初始化获取聊天记录
-onLoad(() => getMsgList_TIM(`0104010`))
+onLoad(() => getMsgList_TIM(`fusheng`))
 
 //页面卸载关闭录音器
 onUnload(() => {
@@ -142,7 +142,7 @@ onUnload(() => {
 //下拉刷新
 onPullDownRefresh(() => {
 	if (completed) return uni.stopPullDownRefresh()
-	getMsgList_TIM(`0104010`,reqMessageID)
+	getMsgList_TIM(`fusheng`,reqMessageID)
 })
 
 </script>

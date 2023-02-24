@@ -28,7 +28,7 @@ import {roomNo} from "../../common/api/login";
 
 onLoad(() => init_TIM())
 
-const toLogin = () => login_TIM(`charge-9000727221-yc`)
+const toLogin = () => login_TIM(`caisheng`)
 
 const toConversation = () => {
 	uni.navigateTo({
