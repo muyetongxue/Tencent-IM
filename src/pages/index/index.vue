@@ -37,24 +37,25 @@ const toConversation = () => {
 }
 
 const toVideo = () => {
-	roomNo(Object.assign({},{
-		patientId: `charge-9000727221-yc`,
-		doctorPhone: '13871863559',
-	})).then(res => {
-		let obj = {
-			type: '视频',
-			sdkAppID: 1400631896,
-			userID: `charge-9000727221-yc`,
-			userSig: uni.getStorageSync('userSig'),
-			roomID: 4294967293,
-			enableCamera: `视频`,
-			enableMic: true,
-			beautyLevel: 9,
-		}
-		uni.navigateTo({
-			url: `/videoCall/index?obj=${encodeURIComponent(JSON.stringify(obj))}`,
-		})
+	let obj = {
+		type: '视频',
+		sdkAppID: 1400631896,
+		userID: `caisheng`,
+		userSig: uni.getStorageSync('userSig'),
+		strRoomID: '332211',
+		enableCamera: `视频`,
+		enableMic: true,
+		beautyLevel: 9,
+	}
+	uni.navigateTo({
+		url: `/videoCall/index?obj=${encodeURIComponent(JSON.stringify(obj))}`,
 	})
+	/*roomNo(Object.assign({},{
+	 patientId: `charge-9000727221-yc`,
+	 doctorPhone: '13871863559',
+	 })).then(res => {
+
+	 })*/
 }
 
 </script>

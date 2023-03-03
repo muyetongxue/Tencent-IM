@@ -26,6 +26,8 @@
 			line-height: 2;
 			padding: vw(10) vw(20);
 			font-size: vw(28);
+			word-break: break-all;
+			word-wrap: break-word;
 			border-radius: vw(16);
 		}
 		.image {
