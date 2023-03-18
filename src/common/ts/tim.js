@@ -3,25 +3,13 @@ import TIMUploadPlugin from "tim-upload-plugin";
 import TIMProfanityFilterPlugin from "tim-profanity-filter-plugin";
 import {getUserSig} from "../api/login";
 
-//全局录音器
-const recorderManager = uni.getRecorderManager()
-const recordOptions = {
-	duration: 60 * 1000, // 录音的时长，单位 ms，最大值 600000（10 分钟）
-	sampleRate: 44100, // 采样率
-	numberOfChannels: 1, // 录音通道数
-	encodeBitRate: 192000, // 编码码率
-	format: 'aac', // 音频格式，选择此格式创建的音频消息，可以在即时通信 IM 全平台（Android、iOS、微信小程序和Web）互通
-}
-recorderManager.onError(errMsg => {})
-
-
 let tim = null
 
-function init_TIM() { //初始化im实时聊天
+function init_TIM(SDKAppID = 1400631896) { //初始化im实时聊天
 	if (uni.isInit) return console.log('im实例已创建')  //这里设置了一个全局变量isLogin来标记是否已登录,避免重复创建im实例
 
 	let options = {
-		SDKAppID: 1400631896, //接入时需要将0替换为您的即时通信 IM 应用的 SDKAppID
+		SDKAppID: SDKAppID, //接入时需要将0替换为您的即时通信 IM 应用的 SDKAppID
 	}
 
 	//创建 SDK 实例，`TIM.create()`方法对于同一个 `SDKAppID` 只会返回同一份实例
@@ -141,7 +129,7 @@ function NET_STATE_CHANGE(event) {
  * 外部调用
  * */
 
-//登录
+//IM登录
 function login_TIM(userID) {
 	getUserSig(Object.assign({},{userid: userID})).then(res0 => {
 		tim.login({userID: userID,userSig: res0.data.userSig}).then(res1 => {
@@ -155,6 +143,16 @@ function login_TIM(userID) {
 			// 登录失败的相关信息
 			console.warn('login error:',err1)
 		})
+	})
+}
+
+//IM登出
+function logout_TIM() {
+	let promise = tim.logout()
+	promise.then(function (imResponse) {
+		console.log(imResponse.data)
+	}).catch(function (imError) {
+		console.warn('logout error:',imError)
 	})
 }
 
@@ -224,10 +222,21 @@ function sendAudioMessage_TIM(to) {
 	})
 }
 
-//录音开始
-function audioStart_TIM() {
-	recorderManager.start()
+//录音 播放
+const recorderManager = uni.getRecorderManager()
+const recordOptions = {
+	duration: 60 * 1000, // 录音的时长，单位 ms，最大值 600000（10 分钟）
+	sampleRate: 44100, // 采样率
+	numberOfChannels: 1, // 录音通道数
+	encodeBitRate: 192000, // 编码码率
+	format: 'aac', // 音频格式，选择此格式创建的音频消息，可以在即时通信 IM 全平台（Android、iOS、微信小程序和Web）互通
 }
+
+function audioStart_TIM() {
+	recorderManager.start(recordOptions)
+}
+
+recorderManager.onError(errMsg => {})
 
 //获取历史对话记录
 function getMsgList_TIM(userID,nextReqMessageID) {
@@ -270,16 +279,6 @@ function setGlobalMsg(data,type) {
 		 uni.MSG = msgarr*/
 		uni.$emit('renderMsg',data.data.message)
 	}
-}
-
-//登出
-function logout_TIM() {
-	let promise = tim.logout()
-	promise.then(function (imResponse) {
-		console.log(imResponse.data)
-	}).catch(function (imError) {
-		console.warn('logout error:',imError)
-	})
 }
 
 export {init_TIM,login_TIM,logout_TIM,sendMessage_TIM,audioStart_TIM,sendAudioMessage_TIM,getMsgList_TIM}

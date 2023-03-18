@@ -1,9 +1,9 @@
 {
-  "name": "云卡测试",
-  "appid": "__UNI__B2B1E24",
-  "description": "云卡测试",
-  "versionName": "1.0.0",
-  "versionCode": "100",
+  "name": "Tencent-IM",
+  "appid": "",
+  "description": "",
+  "versionName": "",
+  "versionCode": "",
   "transformPx": false,
   "app-plus": {
     "usingComponents": true,

@@ -1,5 +1,5 @@
 {
-  "name": "clound-test",
+  "name": "Tencent-IM",
   "version": "1.0.0",
   "scripts": {
     "dev:app": "uni -p app",
@@ -47,9 +47,6 @@
     "@dcloudio/uni-quickapp-webview": "^3.0.0-3070320230222002",
     "@dcloudio/uni-ui": "^1.4.20",
     "@types/crypto-js": "^4.1.1",
-    "crypto-js": "^4.1.1",
-    "miniprogram-ci": "^1.8.25",
-    "moment": "^2.29.1",
     "tim-profanity-filter-plugin": "^0.9.0",
     "tim-upload-plugin": "^1.0.6",
     "tim-wx-sdk": "^2.26.0",
