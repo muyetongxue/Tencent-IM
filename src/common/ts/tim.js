@@ -6,7 +6,7 @@ import {getUserSig} from "../api/login";
 let tim = null
 
 function init_TIM(SDKAppID = 1400631896) { //初始化im实时聊天
-	if (uni.isInit) return console.log('im实例已创建')  //这里设置了一个全局变量isLogin来标记是否已登录,避免重复创建im实例
+	if (uni.isInit) return console.log('TIM实例已创建')  //这里设置了一个全局变量isLogin来标记是否已登录,避免重复创建im实例
 
 	let options = {
 		SDKAppID: SDKAppID, //接入时需要将0替换为您的即时通信 IM 应用的 SDKAppID
@@ -17,9 +17,9 @@ function init_TIM(SDKAppID = 1400631896) { //初始化im实时聊天
 	//设置SDK日志输出级别，详细分级请参见 setLogLevel 接口的说明
 	tim.setLogLevel(1) //普通级别，日志量较多，接入时建议使用
 	//tim.setLogLevel(1) // release 级别，SDK 输出关键信息，生产环境时建议使用
-	// 注册腾讯云即时通信 IM 上传插件
+	// 注册腾讯云即时通信 TIM 上传插件
 	tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin})
-	// 注册腾讯云即时通信 IM 本地审核插件
+	// 注册腾讯云即时通信 TIM 本地审核插件
 	tim.registerPlugin({'tim-profanity-filter-plugin': TIMProfanityFilterPlugin})
 
 	// 监听事件
@@ -36,8 +36,8 @@ function init_TIM(SDKAppID = 1400631896) { //初始化im实时聊天
 	tim.on(TIM.EVENT.KICKED_OUT,KICKED_OUT)
 	tim.on(TIM.EVENT.NET_STATE_CHANGE,NET_STATE_CHANGE)
 
-	uni.isInit = true  //完成im实例创建后设置标志为true
-	console.log('im初始化完成')
+	uni.isInit = true  //完成TIM实例创建后设置标志为true
+	console.log('TIM初始化完成')
 }
 
 function SDK_READY(event) {
@@ -134,14 +134,14 @@ function login_TIM(userID) {
 	getUserSig(Object.assign({},{userid: userID})).then(res0 => {
 		tim.login({userID: userID,userSig: res0.data.userSig}).then(res1 => {
 			uni.setStorageSync('userSig',res0.data.userSig)
-			console.log('登录成功')
 			if (res1.data.repeatLogin) {
 				// 标识账号已登录，本次登录操作为重复登录。v2.5.1 起支持
-				console.log('当前重复登录')
+				return console.log('重复登录',res1)
 			}
+			console.log('TIM登录成功',res1)
 		}).catch(err1 => {
 			// 登录失败的相关信息
-			console.warn('login error:',err1)
+			console.error('TIM登录错误:',err1)
 		})
 	})
 }
@@ -149,10 +149,10 @@ function login_TIM(userID) {
 //IM登出
 function logout_TIM() {
 	let promise = tim.logout()
-	promise.then(function (imResponse) {
-		console.log(imResponse.data)
-	}).catch(function (imError) {
-		console.warn('logout error:',imError)
+	promise.then(res => {
+		console.log('TIM登出成功:',res)
+	}).catch(error => {
+		console.error('TIM登出错误:',error)
 	})
 }
 

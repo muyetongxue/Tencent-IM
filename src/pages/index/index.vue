@@ -1,41 +1,33 @@
 <template>
 	<view class="index">
-		<!--		<input v-model="idcard" class="input" type="idcard" placeholder="输入身份证" maxlength="18">
-				<button size="mini" @click="toMiniProgram">跳转</button>-->
-		<button @click.stop="toLogin">IM登录</button>
-		<button @click.stop="toConversation">跳转会话页面</button>
+		<button @click.stop="init">TIM初始化</button>
+		<button @click.stop="toLogin">TIM登录</button>
+		<button @click.stop="toLoginOut">TIM登出</button>
+		<button @click.stop="toConversation(`fusheng`)">跳转一对一图文语音页面</button>
 		<button @click.stop="toVideo">跳转音视频页面</button>
 	</view>
 </template>
 
 <script setup>
-//import Encrypt from "../../common/ts/encrypt";
-import {ref} from "vue";
-import {onLoad,onReachBottom,onReady,onShareAppMessage} from "@dcloudio/uni-app";
-import {init_TIM,login_TIM,sendMessage_TIM,getMsgList_TIM} from "../../common/ts/tim";
-import {roomNo} from "../../common/api/login";
+import {init_TIM,login_TIM,logout_TIM} from "../../common/ts/tim";
 
-/*const idcard = ref()
- const toMiniProgram = () => {
- uni.navigateToMiniProgram({
- appId: "wx90306cc2e7ae9567",
- envVersion: "trial",
- path: `package1/pages/hmHospitalLoan/homepage/homepage?channelId=HN00000010&code=${Encrypt.base64(encodeURIComponent(idcard.value))}`,
- fail: () => {
- },
- })
- }*/
+//TIM初始化 项目启动时介入,传参TIM应用的SDKAppID number
+const init = () => init_TIM(1400631896)
 
-onLoad(() => init_TIM())
-
+//登录 用户登录时介入,传参当前用户的ID string
 const toLogin = () => login_TIM(`caisheng`)
 
-const toConversation = () => {
+//登出 用户退出登录时介入
+const toLoginOut = () => logout_TIM()
+
+//跳转一对一图文语音页面,传参目标用户的ID string,目标用户需登录过TIM
+const toConversation = (id) => {
 	uni.navigateTo({
-		url: `/conversation/index`,
+		url: `/conversation/index?id=${id}`,
 	})
 }
 
+//跳转音视频页面
 const toVideo = () => {
 	let obj = {
 		type: '视频',
@@ -50,12 +42,6 @@ const toVideo = () => {
 	uni.navigateTo({
 		url: `/videoCall/index?obj=${encodeURIComponent(JSON.stringify(obj))}`,
 	})
-	/*roomNo(Object.assign({},{
-	 patientId: `charge-9000727221-yc`,
-	 doctorPhone: '13871863559',
-	 })).then(res => {
-
-	 })*/
 }
 
 </script>

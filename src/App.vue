@@ -1,8 +1,7 @@
 <script setup>
 import {onHide,onLaunch,onShow} from "@dcloudio/uni-app";
-import {init_TIM} from "./common/ts/tim";
 
-onLaunch(() => init_TIM())
+onLaunch(() => {})
 
 onShow(() => {})
 
